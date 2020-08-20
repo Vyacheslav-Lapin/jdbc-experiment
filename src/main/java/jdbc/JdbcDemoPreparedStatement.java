@@ -27,14 +27,14 @@ public class JdbcDemoPreparedStatement {
               .groupId(resultSet.getLong(Student.Fields.groupId))
               .build());
 
-//    preparedStatement.setLong(1, 2L);
-//    @Cleanup val resultSet2 = preparedStatement.executeQuery();
-//    while (resultSet2.next())
-//      System.out.println(
-//          Student.builder()
-//              .id(resultSet.getLong(Student.Fields.id))
-//              .name(resultSet.getString(Student.Fields.name))
-//              .groupId(resultSet.getLong(Student.Fields.groupId))
-//              .build());
+    preparedStatement.setLong(1, 2L);
+    @Cleanup val resultSet2 = preparedStatement.executeQuery();
+    while (resultSet2.next())
+      System.out.println(
+          Student.builder()
+              .id(resultSet2.getLong(Student.Fields.id))
+              .name(resultSet2.getString(Student.Fields.name))
+              .groupId(resultSet2.getLong(Student.Fields.groupId))
+              .build());
   }
 }
